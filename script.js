@@ -4,22 +4,27 @@ const data = window.data;
 // Make your References to the two DOM nodes
 
 // Create a reference to the element who's ID is 'big_coffee and call it bigCoffee
-
+let bigCoffee = document.getElementById("big_coffee");
 // Create a reference to the element who's ID is 'producer_container' and call it producerContainer
-
+let producerContainer = document.getElementById("producer_container");
 /**************
  *   SLICE 1
  **************/
 
 function updateCoffeeView(coffeeQty) {
   // Create a reference to the element who's ID is 'coffee_counter'
+  let coffeeCounter = documnet.getElementById("coffee_counter");
   // Set the innerText of that element to be the coffeeQty passed into this function
+  coffeeCounter.innerText = coffeeQty;
 }
 
 function clickCoffee(data) {
   // Increment the data object's (passed into this function) coffee property by one
+  data.coffee++;
   // call the updateCoffeeView function and pass it the newly updated data.coffee property
+  updateCoffeeView(data.coffee);
   // call the renderProducers function and pass it the data object
+  renderProducers(data);
 }
 
 /**************

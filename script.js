@@ -33,14 +33,20 @@ function clickCoffee(data) {
 
 function unlockProducers(producers, coffeeCount) {
   // loop through the producers array passed into the function
-  // for each producer, if the coffeeCount (passed in) is greater than or equal
-  // to half the producer's price, reassign the producers.unlocked property to equal true
+  for (let i = 0; i < producers.length; i++) {
+    // for each producer, if the coffeeCount (passed in) is greater than or equal
+    // to half the producer's price, reassign the producers.unlocked property to equal true
+    if (producers[i].price / 2 <= coffeeCount) {
+      producers[i].unlocked = true;
+    }
+  }
 }
 
 function getUnlockedProducers(data) {
   // use the Array.prototype.filter() method
   // filter through the data.producers property, and return an array with only the producers whose
   // unlocked property is true
+  return data.producers.filter((producer) => producer.unlocked === true);
 }
 
 // You do not need to edit this function
@@ -81,11 +87,11 @@ function deleteAllChildNodes(parent) {
 
 function renderProducers(data) {
   // call the unlockProducers function and pass it data.producers and data.coffee
-
+  unlockProducers(data.producers, data.coffee);
   // make a reference to the DOM element whose ID is producer_container
-
+  let producerContainer = document.getElementById("producer_container");
   // call the deleteAllChildNodes function and pass it the above producerContainer element
-
+  deleteAllChildNodes(producerContainer);
   // you do not need to edit the following code, but for understanding, this gets the unlocked producers,
   // and for each producer makes a little html div with that producer's info
   getUnlockedProducers(data).forEach((producer) => {

@@ -35,3 +35,4 @@ Follow the directions in the code comments in the ```script.js``` file. You will
  <hr/>
  
  ## Good Luck! Make sure to go use the Docs!
+<img width="1440" alt="Screen Shot 2022-10-02 at 11 49 50 PM" src="https://user-images.githubusercontent.com/113564694/193516814-84ea5d42-e16e-4a15-9369-a629ae19b06e.png">
